@@ -51,13 +51,17 @@ module Matlab
     
     # Put a value to MATLAB via a given name
     def put_variable(name, value)
-      @driver.put_variable(@handle, name, value)
+      @driver.put_variable(@handle, name.to_s, value)
     end
+    
+    alias_method :[]=, :put_variable
     
     # Get a value from MATLAB via a given name
     def get_variable(name)
-      @driver.get_variable(@handle, name)
+      @driver.get_variable(@handle, name.to_s)
     end
+    
+    alias_method :[], :get_variable
     
     # Call a MATLAB function passing in the arguments
     def method_missing(method_id, *args)
