@@ -17,16 +17,45 @@ A Ruby interface to the MATLAB interpreted language.
   require 'matlab'
   
   engine = Matlab::Engine.new
-  engine.put_variable "x", 123.456
-  engine.put_variable "y", 789.101112
-  engine.eval "z = x * y"
-  engine.get_variable "z"
   
+  # Variable Assignment
+  engine.put_variable "x", 123.456
+  # Sybols are OK
+  engine.put_variable :y, 250.3
+  # Hash style assignment also works
+  engine['z'] = 789.101112
+  engine[:ar] = [1,2,3]
+  
+  # Evaluating code
+  # Use eval_string if you don't need the return value
+  engine.eval_string "x * y"
+  z = engine.get_variable "z"
+  
+  # Use .eval if you want the return value
+  z = engine.eval "x * y"
+  
+  # Or rely on method_missing to ask matlab to apply the 
+  # 'times' function to the arguments directly
+  z = engine.times(123.456, 250.3)
+
+  # Another example
+  range = engine.eval '0:10'
+  binomial_dist = engine.binopdf(range, 10, 0.2)
+
+  # Matrices
   matrix = Matlab::Matrix.new(20, 400)
   20.times { |m| 400.times { |n| matrix[m, n] = rand } }
   engine.put_variable "m", matrix
   
+  # But it would make more sense to have matlab fill in the matrix for us
+  engine.eval_string "y = rand(20, 400)"
+  m = engine[:y]
+  m.class  # => Matlab::Matrix 
+
+  # Save data to a standard .mat file
   engine.save "/tmp/20_x_400_matrix"
+  
+  # Close the engine
   engine.close
   
   # May also use block syntax for new
@@ -59,8 +88,29 @@ If you have MATLAB installed in a non-standard location, you can specify the loc
 
   * gem install matlab-ruby -- --with-matlab-include=/usr/local/matlab/extern/include \
      --with-matlab-lib=/usr/local/matlab/bin/glnx86
+     
+OSX specific instructions:
+  To install the gem on 64-bit OSX, try the following:
+  
+  Create a variable pointing to your matlab distrubution, or instance:
+  * export MATLAB=MATLAB_20011a
+  
+  * gem install matlab-ruby -- --with-matlab-include=/Applications/$MATLAB.app
+    extern/include --with-matlab-lib=/Applications/$MATLAB.app/bin/maci64
 
-Also, the gem ships with the C source-code pre-built, so 
+  Then link the matlab binary to somewhere on your path like /usr/bin or /usr
+    local/bin
+  
+  * ln -s /Applications/$MATLAB.app/bin/matlab /usr/bin/matlab
+  or
+  * sudo ln -s /Applications/$MATLAB.app/bin/matlab /usr/bin/matlab
+  
+  Add something like this to your shell startup script replacing 
+    'R2011a' as needed:
+  *export DYLD_LIBRARY_PATH=/Applications/MATLAB_R2011a.app/bin/maci64/
+
+
+Also, the gem ships with the C source-code pre-written, so
 you do not need to have SWIG installed. However, if you have SWIG installed
 and you want to generate the C file yourself, you can specify the
 <code>--with-swig</code> option.
