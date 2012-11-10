@@ -105,7 +105,7 @@ OSX specific instructions:
   or
   * sudo ln -s /Applications/$MATLAB.app/bin/matlab /usr/bin/matlab
   
-  Add something like this to your shell startup script replacing 
+  Add something like this to your shell startup script replacing
     'R2011a' as needed:
   *export DYLD_LIBRARY_PATH=/Applications/MATLAB_R2011a.app/bin/maci64/
 
