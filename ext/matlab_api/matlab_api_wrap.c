@@ -1828,6 +1828,7 @@ static VALUE mAPI;
 
 
 /* Includes the header in the wrapper code */
+typedef size_t    mwSize;         /* unsigned pointer-width integer */
 #include "engine.h"
 #include "matrix.h"
 
@@ -3498,6 +3499,8 @@ _wrap_mxSetM_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
@@ -3508,7 +3511,15 @@ _wrap_mxSetM_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxSetM_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxSetM_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   mxSetM_730(arg1,arg2);
   return Qnil;
@@ -3701,6 +3712,8 @@ _wrap_mxSetNzmax_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
@@ -3711,7 +3724,15 @@ _wrap_mxSetNzmax_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxSetNzmax_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxSetNzmax_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   mxSetNzmax_730(arg1,arg2);
   return Qnil;
@@ -3751,6 +3772,8 @@ _wrap_mxCalcSingleSubscript_730(int argc, VALUE *argv, VALUE self) {
   mwIndex *arg3 = (mwIndex *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   void *argp3 = 0 ;
   int res3 = 0 ;
   mwIndex result;
@@ -3765,7 +3788,15 @@ _wrap_mxCalcSingleSubscript_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCalcSingleSubscript_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCalcSingleSubscript_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_mwIndex, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
@@ -4320,6 +4351,10 @@ _wrap_mxCreateNumericMatrix_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg2 ;
   mxClassID arg3 ;
   mxComplexity arg4 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
   int val4 ;
@@ -4331,10 +4366,26 @@ _wrap_mxCreateNumericMatrix_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateNumericMatrix_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateNumericMatrix_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateNumericMatrix_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateNumericMatrix_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   ecode3 = SWIG_AsVal_int(argv[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
@@ -4360,6 +4411,8 @@ _wrap_mxSetN_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
@@ -4370,7 +4423,15 @@ _wrap_mxSetN_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxSetN_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxSetN_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   mxSetN_730(arg1,arg2);
   return Qnil;
@@ -4388,6 +4449,8 @@ _wrap_mxSetDimensions_730(int argc, VALUE *argv, VALUE self) {
   int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   int result;
   VALUE vresult = Qnil;
   
@@ -4405,7 +4468,15 @@ _wrap_mxSetDimensions_730(int argc, VALUE *argv, VALUE self) {
   }
   arg2 = (mwSize *)(argp2);
   {
-    arg3 = NUM2INT(argv[2]);
+    res3 = SWIG_ConvertPtr(argv[2], &argp3, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "mwSize","mxSetDimensions_730", 3, argv[2] )); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxSetDimensions_730", 3, argv[2]));
+    } else {
+      arg3 = *((mwSize *)(argp3));
+    }
   }
   result = (int)mxSetDimensions_730(arg1,(mwSize const *)arg2,arg3);
   vresult = SWIG_From_int((int)(result));
@@ -4442,6 +4513,8 @@ _wrap_mxCreateNumericArray_730(int argc, VALUE *argv, VALUE self) {
   mwSize *arg2 = (mwSize *) 0 ;
   mxClassID arg3 ;
   mxComplexity arg4 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   int val3 ;
@@ -4455,7 +4528,15 @@ _wrap_mxCreateNumericArray_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateNumericArray_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateNumericArray_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_mwSize, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -4484,6 +4565,8 @@ SWIGINTERN VALUE
 _wrap_mxCreateCharArray_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize *arg2 = (mwSize *) 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   mxArray *result = 0 ;
@@ -4493,7 +4576,15 @@ _wrap_mxCreateCharArray_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateCharArray_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateCharArray_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_mwSize, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -4513,6 +4604,10 @@ _wrap_mxCreateDoubleMatrix_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize arg2 ;
   mxComplexity arg3 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
   mxArray *result = 0 ;
@@ -4522,10 +4617,26 @@ _wrap_mxCreateDoubleMatrix_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateDoubleMatrix_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateDoubleMatrix_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateDoubleMatrix_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateDoubleMatrix_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   ecode3 = SWIG_AsVal_int(argv[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
@@ -4568,6 +4679,8 @@ SWIGINTERN VALUE
 _wrap_mxCreateLogicalArray_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize *arg2 = (mwSize *) 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   mxArray *result = 0 ;
@@ -4577,7 +4690,15 @@ _wrap_mxCreateLogicalArray_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateLogicalArray_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateLogicalArray_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_mwSize, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -4596,6 +4717,10 @@ SWIGINTERN VALUE
 _wrap_mxCreateLogicalMatrix_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   mxArray *result = 0 ;
   VALUE vresult = Qnil;
   
@@ -4603,10 +4728,26 @@ _wrap_mxCreateLogicalMatrix_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateLogicalMatrix_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateLogicalMatrix_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateLogicalMatrix_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateLogicalMatrix_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   result = (mxArray *)mxCreateLogicalMatrix_730(arg1,arg2);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mxArray_tag, 0 |  0 );
@@ -4718,6 +4859,12 @@ _wrap_mxCreateSparse_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg2 ;
   mwSize arg3 ;
   mxComplexity arg4 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   int val4 ;
   int ecode4 = 0 ;
   mxArray *result = 0 ;
@@ -4727,13 +4874,37 @@ _wrap_mxCreateSparse_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateSparse_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparse_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateSparse_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparse_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   {
-    arg3 = NUM2INT(argv[2]);
+    res3 = SWIG_ConvertPtr(argv[2], &argp3, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "mwSize","mxCreateSparse_730", 3, argv[2] )); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparse_730", 3, argv[2]));
+    } else {
+      arg3 = *((mwSize *)(argp3));
+    }
   }
   ecode4 = SWIG_AsVal_int(argv[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
@@ -4753,6 +4924,12 @@ _wrap_mxCreateSparseLogicalMatrix_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize arg2 ;
   mwSize arg3 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   mxArray *result = 0 ;
   VALUE vresult = Qnil;
   
@@ -4760,13 +4937,37 @@ _wrap_mxCreateSparseLogicalMatrix_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateSparseLogicalMatrix_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparseLogicalMatrix_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateSparseLogicalMatrix_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparseLogicalMatrix_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   {
-    arg3 = NUM2INT(argv[2]);
+    res3 = SWIG_ConvertPtr(argv[2], &argp3, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "mwSize","mxCreateSparseLogicalMatrix_730", 3, argv[2] )); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateSparseLogicalMatrix_730", 3, argv[2]));
+    } else {
+      arg3 = *((mwSize *)(argp3));
+    }
   }
   result = (mxArray *)mxCreateSparseLogicalMatrix_730(arg1,arg2,arg3);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mxArray_tag, 0 |  0 );
@@ -4786,6 +4987,8 @@ _wrap_mxGetNChars_730(int argc, VALUE *argv, VALUE self) {
   int res2 ;
   char *buf2 = 0 ;
   int alloc2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   
   if ((argc < 3) || (argc > 3)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 3)",argc); SWIG_fail;
@@ -4801,7 +5004,15 @@ _wrap_mxGetNChars_730(int argc, VALUE *argv, VALUE self) {
   }
   arg2 = (char *)(buf2);
   {
-    arg3 = NUM2INT(argv[2]);
+    res3 = SWIG_ConvertPtr(argv[2], &argp3, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "mwSize","mxGetNChars_730", 3, argv[2] )); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxGetNChars_730", 3, argv[2]));
+    } else {
+      arg3 = *((mwSize *)(argp3));
+    }
   }
   mxGetNChars_730((struct mxArray_tag const *)arg1,arg2,arg3);
   if (alloc2 == SWIG_NEWOBJ) free((char*)buf2);
@@ -4822,6 +5033,8 @@ _wrap_mxGetString_730(int argc, VALUE *argv, VALUE self) {
   int res2 ;
   char *buf2 = 0 ;
   int alloc2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
   int result;
   VALUE vresult = Qnil;
   
@@ -4839,7 +5052,15 @@ _wrap_mxGetString_730(int argc, VALUE *argv, VALUE self) {
   }
   arg2 = (char *)(buf2);
   {
-    arg3 = NUM2INT(argv[2]);
+    res3 = SWIG_ConvertPtr(argv[2], &argp3, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "mwSize","mxGetString_730", 3, argv[2] )); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxGetString_730", 3, argv[2]));
+    } else {
+      arg3 = *((mwSize *)(argp3));
+    }
   }
   result = (int)mxGetString_730((struct mxArray_tag const *)arg1,arg2,arg3);
   vresult = SWIG_From_int((int)(result));
@@ -4882,6 +5103,8 @@ _wrap_mxCreateStringFromNChars_730(int argc, VALUE *argv, VALUE self) {
   int res1 ;
   char *buf1 = 0 ;
   int alloc1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   mxArray *result = 0 ;
   VALUE vresult = Qnil;
   
@@ -4894,7 +5117,15 @@ _wrap_mxCreateStringFromNChars_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (char *)(buf1);
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateStringFromNChars_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateStringFromNChars_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   result = (mxArray *)mxCreateStringFromNChars_730((char const *)arg1,arg2);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mxArray_tag, 0 |  0 );
@@ -4937,6 +5168,8 @@ SWIGINTERN VALUE
 _wrap_mxCreateCharMatrixFromStrings_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   char **arg2 = (char **) 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   mxArray *result = 0 ;
@@ -4946,7 +5179,15 @@ _wrap_mxCreateCharMatrixFromStrings_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateCharMatrixFromStrings_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateCharMatrixFromStrings_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_p_char, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -4965,6 +5206,10 @@ SWIGINTERN VALUE
 _wrap_mxCreateCellMatrix_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
   mxArray *result = 0 ;
   VALUE vresult = Qnil;
   
@@ -4972,10 +5217,26 @@ _wrap_mxCreateCellMatrix_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateCellMatrix_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateCellMatrix_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   {
-    arg2 = NUM2INT(argv[1]);
+    res2 = SWIG_ConvertPtr(argv[1], &argp2, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "mwSize","mxCreateCellMatrix_730", 2, argv[1] )); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateCellMatrix_730", 2, argv[1]));
+    } else {
+      arg2 = *((mwSize *)(argp2));
+    }
   }
   result = (mxArray *)mxCreateCellMatrix_730(arg1,arg2);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mxArray_tag, 0 |  0 );
@@ -4989,6 +5250,8 @@ SWIGINTERN VALUE
 _wrap_mxCreateCellArray_730(int argc, VALUE *argv, VALUE self) {
   mwSize arg1 ;
   mwSize *arg2 = (mwSize *) 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   mxArray *result = 0 ;
@@ -4998,7 +5261,15 @@ _wrap_mxCreateCellArray_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateCellArray_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateCellArray_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_mwSize, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
@@ -5067,6 +5338,8 @@ _wrap_mxCreateStructArray_730(int argc, VALUE *argv, VALUE self) {
   mwSize *arg2 = (mwSize *) 0 ;
   int arg3 ;
   char **arg4 = (char **) 0 ;
+  void *argp1 ;
+  int res1 = 0 ;
   void *argp2 = 0 ;
   int res2 = 0 ;
   int val3 ;
@@ -5080,7 +5353,15 @@ _wrap_mxCreateStructArray_730(int argc, VALUE *argv, VALUE self) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 4)",argc); SWIG_fail;
   }
   {
-    arg1 = NUM2INT(argv[0]);
+    res1 = SWIG_ConvertPtr(argv[0], &argp1, SWIGTYPE_p_mwSize,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mwSize","mxCreateStructArray_730", 1, argv[0] )); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, Ruby_Format_TypeError("invalid null reference ", "mwSize","mxCreateStructArray_730", 1, argv[0]));
+    } else {
+      arg1 = *((mwSize *)(argp1));
+    }
   }
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_mwSize, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
