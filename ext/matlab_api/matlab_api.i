@@ -10,6 +10,7 @@
 
 /* Parse the header file to generate wrappers */
 typedef size_t    mwSize;         /* unsigned pointer-width integer */
+typedef size_t    mwIndex;
 %include "engine.h"
 %include "matrix.h"
 
