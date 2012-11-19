@@ -90,9 +90,10 @@ If you have MATLAB installed in a non-standard location, you can specify the loc
      --with-matlab-lib=/usr/local/matlab/bin/glnx86
      
 OSX specific instructions:
+--------------------
   To install the gem on 64-bit OSX, try the following:
   
-  Create a variable pointing to your matlab distrubution, or instance:
+  Create a variable pointing to your matlab distrubution, for instance:
   * export MATLAB=MATLAB_20011a
   
   * gem install matlab-ruby -- --with-matlab-include=/Applications/$MATLAB.app
@@ -108,7 +109,6 @@ OSX specific instructions:
   Add something like this to your shell startup script replacing
     'R2011a' as needed:
   *export DYLD_LIBRARY_PATH=/Applications/MATLAB_R2011a.app/bin/maci64/
-
 
 Also, the gem ships with the C source-code pre-written, so
 you do not need to have SWIG installed. However, if you have SWIG installed
