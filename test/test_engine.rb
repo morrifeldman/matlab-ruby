@@ -20,12 +20,12 @@ class EngineTest_Init < Test::Unit::TestCase
     exception = assert_raise(LoadError) do
       engine = Matlab::Engine.new("matfoo", :driver => "foo")
     end
-    assert_equal "no such file to load -- matlab/driver/foo/driver", exception.message
+    assert_equal "cannot load such file -- matlab/driver/foo/driver", exception.message
     
     exception = assert_raise(LoadError) do
       engine = Matlab::Engine.new("matfoo", :driver => :bar)
     end
-    assert_equal "no such file to load -- matlab/driver/bar/driver", exception.message
+    assert_equal "cannot load such file -- matlab/driver/bar/driver", exception.message
   end
   
   def test_new_with_native_driver
