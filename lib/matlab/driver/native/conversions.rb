@@ -135,13 +135,13 @@ module Matlab
   class CellMatrix
     # Converts the matrix into a MATLAB cell matrix
     def to_matlab
-      matrix = Matlab::Driver::Native::API.mxCreateCellMatrix(m, n)
+      matrix = Matlab::Driver::Native::API.mxCreateCellMatrix_730(m, n)
       
       index = 0
       n.times do |column_index|
         m.times do |row_index|
           value = (@cells[row_index][column_index].nil? ? Matlab::Driver::Native::API.mxCreateDoubleScalar(nil.to_matlab) : @cells[row_index][column_index].to_matlab)
-          Matlab::Driver::Native::API.mxSetCell(matrix, index, value)
+          Matlab::Driver::Native::API.mxSetCell_730(matrix, index, value)
           index += 1
         end
       end
@@ -155,16 +155,15 @@ module Matlab
       n = Matlab::Driver::Native::API.mxGetN(matrix)
       
       cell_matrix = self.new(m, n)
-      
       index = 0
       n.times do |column_index|
         m.times do |row_index|
-          value = Matlab::Driver::Native::API.mxGetCell(matrix, index).to_ruby
+          value = Matlab::Driver::Native::API.mxGetCell_730(matrix, index).to_ruby
           cell_matrix[row_index, column_index] = (value.nil? || value.to_s == nil.to_matlab.to_s ? nil : value)
           index += 1
         end
       end
-      
+
       if m == 1 || n == 1
         cell_matrix.cells.collect { |cell| cell.first }
       else
@@ -176,7 +175,7 @@ module Matlab
   class StructMatrix
     # Converts the matrix into a MATLAB struct matrix
     def to_matlab
-      matrix = Matlab::Driver::Native::API.mxCreateStructMatrix(m, n, 0, nil)
+      matrix = Matlab::Driver::Native::API.mxCreateStructMatrix_730(m, n, 0, nil)
       names.each { |name| Matlab::Driver::Native::API.mxAddField(matrix, name) }
       
       index = 0
@@ -184,7 +183,7 @@ module Matlab
         n.times do |column_index|
           names.each do |name|
             value = (@cells[row_index][column_index][name].nil? ? Matlab::Driver::Native::API.mxCreateDoubleScalar(nil.to_matlab) : @cells[row_index][column_index][name].to_matlab)
-            Matlab::Driver::Native::API.mxSetField(matrix, index, name, value)
+            Matlab::Driver::Native::API.mxSetField_730(matrix, index, name, value)
           end
           index += 1
         end
@@ -205,7 +204,7 @@ module Matlab
       m.times do |row_index|
         n.times do |column_index|
           names.each do |name|
-            value = Matlab::Driver::Native::API.mxGetField(matrix, index, name)
+            value = Matlab::Driver::Native::API.mxGetField_730(matrix, index, name)
             struct_matrix[row_index, column_index][name] = (value.nil? || Matlab::Driver::Native::API.mxIsEmpty(value) || value.to_ruby.to_s == nil.to_matlab.to_s ? nil : value.to_ruby)
           end
           index += 1
