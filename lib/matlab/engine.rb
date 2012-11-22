@@ -74,7 +74,14 @@ module Matlab
       end
       
       eval_string("#{method_name}(#{variable_names.join(", ")})")
-      result = get_variable("ans")
+      
+      eval_string("is_ans = exist('ans','var')")
+      is_ans = get_variable('is_ans')
+      result = if is_ans == 1
+        get_variable("ans")
+      else
+        nil
+      end
       eval_string("clear #{variable_names.join(" ")}")
       result
     end
